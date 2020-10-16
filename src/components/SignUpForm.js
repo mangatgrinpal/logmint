@@ -2,7 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const SignInForm = () => {
+const SignUpForm = () => {
 	return (
 		<Form>
 			<Form.Group>
@@ -49,11 +49,11 @@ const SignInForm = () => {
 					type='password'
 					placeholder='Password confirmation'/>
 			</Form.Group>
-			<Button>
+			<Button block>
 				Register
 			</Button>
 		</Form>
 	)
 }
 
-export default SignInForm
+export default SignUpForm
