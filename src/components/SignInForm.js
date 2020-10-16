@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
 const SignInForm = () => {
@@ -22,6 +23,10 @@ const SignInForm = () => {
 			<Button>
 				Submit
 			</Button>
+			<Row className='pt-5'>
+  			<Button>Google</Button>
+  			<Button>Microsoft</Button>
+  		</Row>
 		</Form>
 	)
 }
