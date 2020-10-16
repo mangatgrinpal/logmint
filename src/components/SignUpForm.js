@@ -1,16 +1,42 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+
 const SignUpForm = () => {
+
+	const [ user, setUser ] = useState({
+		organization: '',
+		firstName: '',
+		lastName: '',
+		email: '',
+		password: '',
+		passwordConfirmation: ''
+	})
+
+
+	const { organization, firstName, lastName, email, password, passwordConfirmation } = user;
+	
+	const handleInputChange = e => {
+		setUser({...user, [e.target.name]: e.target.value})
+	}
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		console.log(user)
+	}
+
 	return (
-		<Form>
+	
+		<Form onSubmit={handleSubmit}>
 			<Form.Group>
 				<Form.Label>Organization</Form.Label>
 				<Form.Control 
 					type='text'
 					name='organization'
-					placeholder='organization'/>
+					value={organization}
+					placeholder='organization'
+					onChange={handleInputChange}/>
 
 			</Form.Group>
 			<Form.Group>
@@ -18,7 +44,9 @@ const SignUpForm = () => {
 				<Form.Control 
 					type='text'
 					name='firstName'
-					placeholder='First Name'/>
+					value={firstName}
+					placeholder='First Name'
+					onChange={handleInputChange}/>
 
 			</Form.Group>
 			<Form.Group>
@@ -26,7 +54,9 @@ const SignUpForm = () => {
 				<Form.Control 
 					type='text'
 					name='lastName'
-					placeholder='Last Name'/>
+					value={lastName}
+					placeholder='Last Name'
+					onChange={handleInputChange}/>
 
 			</Form.Group>
 			<Form.Group>
@@ -34,22 +64,30 @@ const SignUpForm = () => {
 				<Form.Control 
 					type='text'
 					name='email'
-					placeholder='email'/>
+					value={email}
+					placeholder='email'
+					onChange={handleInputChange}/>
 
 			</Form.Group>
 			<Form.Group>
 				<Form.Label>Password</Form.Label>
 				<Form.Control
 					type='password'
-					placeholder='password'/>
+					name='password'
+					value={password}
+					placeholder='password'
+					onChange={handleInputChange}/>
 			</Form.Group>
 			<Form.Group>
 				<Form.Label>Password Confirmation</Form.Label>
 				<Form.Control
 					type='password'
-					placeholder='Password confirmation'/>
+					name='passwordConfirmation'
+					value={passwordConfirmation}
+					placeholder='Password confirmation'
+					onChange={handleInputChange}/>
 			</Form.Group>
-			<Button block>
+			<Button type='submit' block>
 				Register
 			</Button>
 		</Form>
