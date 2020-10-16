@@ -12,8 +12,9 @@ const SignUpForm = () => {
 		email: '',
 		password: '',
 		passwordConfirmation: ''
-	})
+	});
 
+	const [validated, setValidated] = useState(false);
 
 	const { organization, firstName, lastName, email, password, passwordConfirmation } = user;
 	
@@ -22,16 +23,28 @@ const SignUpForm = () => {
 	}
 
 	const handleSubmit = e => {
+		const form = e.currentTarget;
 		e.preventDefault();
-		console.log(user)
+		if (form.checkValidity() === false) {
+			
+			e.stopPropagation();	
+		}
+
+		setValidated(true)
+
+		if (form.checkValidity()=== true) {
+			console.log(user)
+		}
+
 	}
 
 	return (
 	
-		<Form onSubmit={handleSubmit}>
+		<Form noValidate validated={validated} onSubmit={handleSubmit}>
 			<Form.Group>
 				<Form.Label>Organization</Form.Label>
-				<Form.Control 
+				<Form.Control
+					required 
 					type='text'
 					name='organization'
 					value={organization}
@@ -41,7 +54,8 @@ const SignUpForm = () => {
 			</Form.Group>
 			<Form.Group>
 				<Form.Label>First Name</Form.Label>
-				<Form.Control 
+				<Form.Control
+					required 
 					type='text'
 					name='firstName'
 					value={firstName}
@@ -51,7 +65,8 @@ const SignUpForm = () => {
 			</Form.Group>
 			<Form.Group>
 				<Form.Label>Last Name</Form.Label>
-				<Form.Control 
+				<Form.Control
+					required 
 					type='text'
 					name='lastName'
 					value={lastName}
@@ -61,7 +76,8 @@ const SignUpForm = () => {
 			</Form.Group>
 			<Form.Group>
 				<Form.Label>Email</Form.Label>
-				<Form.Control 
+				<Form.Control
+					required 
 					type='text'
 					name='email'
 					value={email}
@@ -72,6 +88,7 @@ const SignUpForm = () => {
 			<Form.Group>
 				<Form.Label>Password</Form.Label>
 				<Form.Control
+					required
 					type='password'
 					name='password'
 					value={password}
@@ -81,6 +98,7 @@ const SignUpForm = () => {
 			<Form.Group>
 				<Form.Label>Password Confirmation</Form.Label>
 				<Form.Control
+					required
 					type='password'
 					name='passwordConfirmation'
 					value={passwordConfirmation}
