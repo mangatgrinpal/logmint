@@ -22,7 +22,12 @@ const UsersPage = () => {
 						&nbsp;
 						Add User
 					</Button>
-			</Col>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					You don't have any users added yet.
+				</Col>
 			</Row>
 		</>
 		

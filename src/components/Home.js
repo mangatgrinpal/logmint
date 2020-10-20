@@ -63,7 +63,7 @@ const Home = ({ showSignUp, setShowSignUp, showSignIn, setShowSignIn }) => {
 									<h4>Welcome back, sign in</h4>
 								</Col>
 							</Row>
-							<Row>
+							<Row className='dividing-line'>
 								<Col className='mx-2'>
 									<SignInForm
 										showSignUp={showSignUp}

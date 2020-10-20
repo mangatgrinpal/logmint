@@ -4,6 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 const SignInForm = ({
@@ -79,9 +81,19 @@ const SignInForm = ({
 				<Col className='text-center pb-1'>
 					<h6><span>or</span></h6>
 				</Col>
-  			<Button className='my-2' block>Sign in with Google</Button>
+  			<Button className='my-2' block>
+					<FontAwesomeIcon 
+						icon={['fab', 'google']}/>
+						&nbsp;
+					Sign in with Google
+				</Button>
   			<br/>
-  			<Button block>Sign in with Microsoft</Button>
+  			<Button block>
+					<FontAwesomeIcon
+						icon={['fab', 'microsoft']} />
+						&nbsp;
+					Sign in with Microsoft
+				</Button>
   		</Row>
 		</Form>
 	)

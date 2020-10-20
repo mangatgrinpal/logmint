@@ -6,34 +6,34 @@ import UsersPage from './UsersPage';
 import Col from 'react-bootstrap/Col';
 
 import { 
-    Switch, 
-    Route, 
-    useRouteMatch 
+		Switch, 
+		Route, 
+		useRouteMatch 
 } from 'react-router-dom';
 
 
 const DashboardMainContentContainer = () => {
 
-    const match = useRouteMatch();
+		const match = useRouteMatch();
 
 
 
-    return (
-        <Col md={10}>
-            <Switch>
-                <Route exact path={`${match.path}`}>
-                    Welcome to logmint
-                </Route>
-                <Route path={`${match.path}/ci-cd`}>
-                    <LogsPage />
-                </Route>
-                <Route path={`${match.path}/users`}>
-                    <UsersPage />
-                </Route>
-            </Switch>
-        </Col>
-        
-    )
+		return (
+				<Col md={10} className='overflow-auto'>
+						<Switch>
+								<Route exact path={`${match.path}`}>
+										Welcome to logmint
+								</Route>
+								<Route path={`${match.path}/ci-cd`}>
+										<LogsPage />
+								</Route>
+								<Route path={`${match.path}/users`}>
+										<UsersPage />
+								</Route>
+						</Switch>
+				</Col>
+				
+		)
 }
 
 export default DashboardMainContentContainer

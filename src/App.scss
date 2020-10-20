@@ -49,15 +49,48 @@ button {
 	}
 }
 
-.dashboard-siderbar {
-	ul {
-		list-style: none;
 
-		li {
-			text-decoration: none;
+
+.dashboard-sidebar {
+	.brand {
+		a {
+			text-decoration: none!important;
+			color: #fff;
+		}
+	}
+
+	.dashboard-nav-links {
+		
+		a {
+			text-decoration: none!important;
+			color: #fff;
+
+			.row {
+				height: 4rem;
+
+				&:hover {
+					background-color: #137a63;
+
+				}
+			}
+		}
+
+		a.active {
+			color:#3eb489;
+
+			.row {
+				border-left: 0.5rem solid #3eb489;
+
+			}
+			
+			.row:hover {
+				background-color: transparent;
+				
+			}
 		}
 	}
 }
+
 
 
 

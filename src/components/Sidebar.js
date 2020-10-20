@@ -3,38 +3,88 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch, NavLink } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SideBar = () => {
     const match = useRouteMatch();
 
     return (
         <Col md={2} className='border-right bg-dark text-white shadow dashboard-sidebar'>
-            <Row>
-                <Col>
-                    <Link to='/dashboard'>Logmint</Link>
-                </Col>
-            </Row>
-            <Row>
-                <ul>
-                    <li>
-                        <Link to={`${match.url}/ci-cd`}>CI/CD</Link>
-                    </li>
-                    <li>
-                        <Link to={`${match.url}/support`}>Support</Link>
-                    </li>
-                    <li>
-                        <Link to={`${match.url}/environments`}>Environments</Link>
-                    </li>
-                    <li>
-                        <Link to={`${match.url}/users`}>Users & Groups</Link>
-                    </li>
-                    <li>
-                        <Link to={`${match.url}/your-account`}>Your account</Link>
-                    </li>
-                </ul>
-            </Row>
-            
+					<Row className='brand pt-3 text-center'>
+						<Col>
+							<NavLink to='/dashboard' activeClassName='active'>
+								<h3>Log<span className='mint-color'>mint</span></h3>
+							</NavLink>
+						</Col>
+					</Row>
+					<Row className='dashboard-nav-links pt-4'>
+						<Col xs={12}>
+
+							<NavLink to={`${match.url}/ci-cd`} activeClassName='active'>
+								<Row  className='py-3'>
+									<Col xs={{span:2, offset: 1}} className='text-center'>
+										<FontAwesomeIcon
+											icon={['fas', 'clipboard-list']} />
+									</Col>
+									<Col xs={{span: 8,offset: 1}}>
+										CI/CD
+									</Col>
+								</Row>
+							</NavLink>
+
+							<NavLink to={`${match.url}/support`} activeClassName='active'>
+								<Row  className='py-3'>
+									<Col xs={{span:2, offset: 1}} className='text-center'>
+										<FontAwesomeIcon
+											icon={['fas', 'headset']} />
+									</Col>
+									<Col xs={{span: 8,offset: 1}}>
+										Support
+									</Col>
+								</Row>
+							</NavLink>
+
+							<NavLink to={`${match.url}/environments`} activeClassName='active'>
+								<Row  className='py-3'>
+									<Col xs={{span:2, offset: 1}} className='text-center'>
+										<FontAwesomeIcon
+											icon={['fas', 'clipboard-list']} />
+									</Col>
+									<Col xs={{span: 8,offset: 1}}>
+										Environments
+									</Col>
+								</Row>
+							</NavLink>
+
+							<NavLink to={`${match.url}/users`} activeClassName='active'>
+								<Row  className='py-3'>
+									<Col xs={{span:2, offset: 1}}  className='text-center'>
+										<FontAwesomeIcon
+											icon={['fas', 'users']} />
+									</Col>
+									<Col xs={{span: 8,offset: 1}}>
+										Users & Groups
+									</Col>
+								</Row>
+							</NavLink>
+
+							<NavLink to={`${match.url}/your-account`} activeClassName='active'>
+								<Row  className='py-3'>
+									<Col xs={{span:2, offset: 1}} className='text-center'>
+										<FontAwesomeIcon
+											icon={['fas', 'clipboard-list']} />
+									</Col>
+									<Col xs={{span: 8,offset: 1}}>
+										Your account
+									</Col>
+								</Row>
+							</NavLink>
+
+						</Col>
+					</Row>
+					
         </Col>
         
     )
