@@ -1,15 +1,19 @@
 import React from 'react'
 
 import Sidebar from './Sidebar';
-import MainContentContainer from './MainContentContainer';
+import DashboardMainContentContainer from './DashboardMainContentContainer';
+
+import Row from 'react-bootstrap/Row';
+
 
 
 const Dashboard = () => {
+
     return (
-				<>
+				<Row className='vh-100'>
         	<Sidebar/>
-					<MainContentContainer />
-				</>
+					<DashboardMainContentContainer />
+				</Row>
     )
 }
 
