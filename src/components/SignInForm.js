@@ -4,6 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+
+
 const SignInForm = ({
 	setShowSignUp, 
 	setShowSignIn
@@ -14,7 +16,7 @@ const SignInForm = ({
 		password: ''
 	})
 
-	const [ validated, setValidated] = useState(false);
+	const [ validated, setValidated ] = useState(false);
 
 	const handleClick = () => {
 		setShowSignIn(false)
@@ -65,15 +67,17 @@ const SignInForm = ({
 					onChange={handleInputChange}/>
 			</Form.Group>
 			<div className='text-right'>
-				<Button onClick={handleClick}> Cancel</Button>
+				<Button 
+					onClick={handleClick}
+					className='mr-1'> Cancel</Button>
 				<Button type='submit'>
 					Sign in
 				</Button>
 			</div>
 
 			<Row className='pt-2'>
-				<Col className='text-center border-bottom pb-1'>
-					or
+				<Col className='text-center pb-1'>
+					<h6><span>or</span></h6>
 				</Col>
   			<Button className='my-2' block>Sign in with Google</Button>
   			<br/>

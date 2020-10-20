@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import './App.css';
+
+
+
 import Header from './components/Header';
-
-import SignUpForm from './components/SignUpForm';
-import SignInForm from './components/SignInForm';
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
-import { CSSTransition } from 'react-transition-group';
+
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route
+} from 'react-router-dom';
+
 
 
 const App = () => {
@@ -20,80 +26,28 @@ const App = () => {
 
 
   return (
-  	<Container fluid={true}>
-
-  		<Header 
-  			showSignUp={showSignUp} 
-  			setShowSignUp={setShowSignUp}
-  			showSignIn={showSignIn}
-  			setShowSignIn={setShowSignIn}/>
-  		<Row>
-
-  		<Container fluid={true}>
-  			<Row className='hero-image vh-100'/>
-  		</Container>
-  		<CSSTransition
-  			in={showSignUp}
-  			timeout={600}
-  			unmountOnExit
-  			classNames='complete-fade'>
-
-	  		<Container 
-	  			fluid={true} 
-	  			className='position-absolute main-content'>
-	  			<Row>
-	  				<Col 
-	  					className='border rounded sign-up-form-container pt-3 pb-5 my-4 bg-light h-75' 
-	  					md={{span: 3, offset: 7}}>
-	  					<Row>
-	  						<Col className='mx-2'>
-	  							<h4>Save precious dev hours</h4>
-	  							<p>Sign up today dudes</p>
-	  						</Col>
-	  					</Row>
-	  					<Row>
-	  						<Col className='mx-2'>
-	  							<SignUpForm/>
-	  						</Col>
-	  					</Row>
-	  				</Col>
-	  			</Row>
-	  		</Container>
-  		</CSSTransition>
-	  		<CSSTransition
-	  			in={showSignIn}
-	  			timeout={600}
-	  			unmountOnExit
-	  			classNames='complete-fade'>
-
-		  		<Container 
-		  			fluid={true} 
-		  			className='position-absolute main-content'>
-		  			<Row>
-		  				<Col 
-		  					className='border rounded sign-up-form-container pt-3 pb-5 my-4 bg-light h-75' 
-		  					md={{span: 3, offset: 7}}>
-		  					<Row>
-		  						<Col className='mx-2'>
-		  							<h4>Welcome back, sign in</h4>
-		  						</Col>
-		  					</Row>
-		  					<Row>
-		  						<Col className='mx-2'>
-		  							<SignInForm 
-		  								showSignUp={showSignUp} 
-		  								setShowSignUp={setShowSignUp}
-		  								showSignIn={showSignIn}
-		  								setShowSignIn={setShowSignIn}/>
-		  						</Col>
-		  					</Row>
-		  				</Col>
-		  			</Row>
-		  		</Container>
-	  		</CSSTransition>
-  		</Row>
-  		
-  	</Container>
+		<Router>
+			<Container fluid={true}>
+				<Switch>
+					<Route exact path='/' >
+						<Header
+							showSignUp={showSignUp}
+							setShowSignUp={setShowSignUp}
+							showSignIn={showSignIn}
+							setShowSignIn={setShowSignIn} />
+						<Home
+							showSignUp={showSignUp}
+							setShowSignUp={setShowSignUp}
+							showSignIn={showSignIn}
+							setShowSignIn={setShowSignIn} />
+					</Route>
+					<Route path='/dashboard'>
+						<Dashboard />
+					</Route>
+				</Switch>
+				
+			</Container>
+		</Router>
   );
 }
 
