@@ -9,19 +9,28 @@ const SideBar = () => {
     const match = useRouteMatch();
 
     return (
-        <Col md={2} className='border-right bg-dark text-white'>
+        <Col md={2} className='border-right bg-dark text-white shadow dashboard-sidebar'>
             <Row>
                 <Col>
-                    <h2 className='text-white'>Logmint</h2>
+                    <Link to='/dashboard'>Logmint</Link>
                 </Col>
             </Row>
             <Row>
                 <ul>
                     <li>
-                        <Link to={`${match.url}/logs`}>Logs</Link>
+                        <Link to={`${match.url}/ci-cd`}>CI/CD</Link>
+                    </li>
+                    <li>
+                        <Link to={`${match.url}/support`}>Support</Link>
+                    </li>
+                    <li>
+                        <Link to={`${match.url}/environments`}>Environments</Link>
                     </li>
                     <li>
                         <Link to={`${match.url}/users`}>Users & Groups</Link>
+                    </li>
+                    <li>
+                        <Link to={`${match.url}/your-account`}>Your account</Link>
                     </li>
                 </ul>
             </Row>
