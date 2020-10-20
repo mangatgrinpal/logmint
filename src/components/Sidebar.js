@@ -15,7 +15,7 @@ const SideBar = () => {
 					<Row className='brand pt-3 text-center'>
 						<Col>
 							<NavLink to='/dashboard' activeClassName='active'>
-								<h3>Log<span className='mint-color'>mint</span></h3>
+								Log<span className='mint-color'>mint</span>
 							</NavLink>
 						</Col>
 					</Row>
