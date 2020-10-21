@@ -5,11 +5,16 @@ import SignInForm from './SignInForm';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 import { CSSTransition } from 'react-transition-group';
 
 const Home = ({ showSignUp, setShowSignUp, showSignIn, setShowSignIn }) => {
 
+	const handleClick = () => {
+		setShowSignIn(false)
+		setShowSignUp(true)
+	}
 	return (
 		<Row>
 
@@ -71,6 +76,16 @@ const Home = ({ showSignUp, setShowSignUp, showSignIn, setShowSignIn }) => {
 										showSignIn={showSignIn}
 										setShowSignIn={setShowSignIn} />
 								</Col>
+							</Row>
+							<Row className='pt-2'>
+								<Col className='mx-2'>
+									Not registered yet?
+									&nbsp;
+									<Button onClick={handleClick}>
+										Click here
+									</Button>
+								</Col>
+								
 							</Row>
 						</Col>
 					</Row>

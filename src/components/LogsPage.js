@@ -3,36 +3,25 @@ import React, { useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
+import AddLogsModal from './AddLogsModal';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 const LogsPage = () => {
 
 	const [ showModal, setShowModal ] = useState(false);
+
 	const [ logs, setLogs ] = useState([])
-	const [ logInfo, setLogInfo ] = useState({
-		logName: ''
-	})
+	
 	
 	const handleShow = () => setShowModal(true)
 	const handleClose = () => setShowModal(false)
 
-	const handleInputChange = e => {
-		setLogInfo({...logInfo, [e.target.name]: e.target.value})
-	}
+	
 
-	const handleSubmit = e => {
-		e.preventDefault()
-		const newLogs = Object.assign([])
-		newLogs.push(logInfo)
-		setLogs(newLogs)
-
-	}
-
-	const { logName } = logInfo;
+	
 
 	return (
 		<>
@@ -68,48 +57,32 @@ const LogsPage = () => {
 							</Button>
 						</Col>
 					) : (
-
-							logs.map((log, index)=> {
+						<Col>
+							{logs.map((log, index)=> {
 								return (
-									<Row key={index}>
+									<Row key={index} className='border-bottom'>
 										<Col>
 											{log.logName}
 										</Col>
+										
+										<Button>
+											Edit
+										</Button>
+
+										
 									</Row>
 								)
-							})
-
+							})}
+						</Col>
 					)
 				}
 				
 			</Row>
-			<Modal show={showModal} onHide={handleClose} centered>
-				<Modal.Header closeButton>
-					<Modal.Title>Add CI/CD</Modal.Title>
-				</Modal.Header>
-				<Form onSubmit={handleSubmit}>
-					<Modal.Body>
-						<Form.Row>
-							<Form.Group as={Col}>
-								<Form.Label>Name</Form.Label>
-								<Form.Control 
-									name='logName'
-									type='text'
-									onChange={handleInputChange}
-									value={logName}/>
-							</Form.Group>
-						</Form.Row>
-					</Modal.Body>
-					<Modal.Footer>
-						<Button variant="secondary" onClick={handleClose}>
-							Close
-						</Button>
-						<Button variant="primary" type='submit' onClick={handleClose}>
-							Create CI/CD
-						</Button>
-					</Modal.Footer>
-				</Form>
-			</Modal>
+			<AddLogsModal
+				logs={logs} 
+				setLogs={setLogs}
+				showModal={showModal}
+				handleClose={handleClose}/>
 		</>
 	)
 }
