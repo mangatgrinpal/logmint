@@ -2,6 +2,7 @@ import React from 'react';
 
 import LogsPage from './LogsPage';
 import UsersPage from './UsersPage';
+import SupportPage from './SupportPage';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,6 +12,7 @@ import {
 		Route, 
 		useRouteMatch 
 } from 'react-router-dom';
+
 
 
 const DashboardMainContentContainer = () => {
@@ -32,13 +34,11 @@ const DashboardMainContentContainer = () => {
 							</Row>
 						</Route>
 
-						<Route path={`${match.path}/ci-cd`}>
-								<LogsPage />
-						</Route>
+						<Route path={`${match.path}/ci-cd`} component={LogsPage}/>
+						
+						<Route path={`${match.path}/users`} component={UsersPage}/>
 
-						<Route path={`${match.path}/users`}>
-								<UsersPage />
-						</Route>
+						<Route path={`${match.path}/support`} component={SupportPage}/>
 						
 					</Switch>
 				</Col>
