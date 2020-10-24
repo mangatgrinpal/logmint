@@ -1,10 +1,7 @@
 import React from 'react';
-
 import Col from 'react-bootstrap/Col';
-
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-
 
 const Header = ({showSignUp, setShowSignUp, showSignIn, setShowSignIn }) => {
 
@@ -12,7 +9,6 @@ const Header = ({showSignUp, setShowSignUp, showSignIn, setShowSignIn }) => {
 		setShowSignIn(!showSignIn)
 		setShowSignUp(!showSignUp)
 	}
-
 
 	return (
 		<Navbar fixed='top' className='header-nav'>

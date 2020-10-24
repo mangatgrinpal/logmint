@@ -3,10 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
 
 const SignInForm = ({
 	setShowSignUp, 
@@ -29,14 +26,9 @@ const SignInForm = ({
 		const form = e.currentTarget;
 		e.preventDefault();
 		if (form.checkValidity() === false) {
-			
 			e.stopPropagation();	
 		}
-
 		setValidated(true)
-
-		
-		
 	}
 
 	const handleInputChange = e => {
@@ -47,6 +39,7 @@ const SignInForm = ({
 
 	return (
 		<Form noValidate validated={validated} onSubmit={handleSubmit}>
+
 			<Form.Group>
 				<Form.Label>Email</Form.Label>
 				<Form.Control
@@ -56,8 +49,8 @@ const SignInForm = ({
 					value={email}
 					placeholder='email'
 					onChange={handleInputChange}/>
-
 			</Form.Group>
+
 			<Form.Group>
 				<Form.Label>Password</Form.Label>
 				<Form.Control
@@ -68,6 +61,7 @@ const SignInForm = ({
 					placeholder='password'
 					onChange={handleInputChange}/>
 			</Form.Group>
+
 			<div className='text-right'>
 				<Button 
 					onClick={handleClick}
@@ -81,20 +75,20 @@ const SignInForm = ({
 				<Col className='text-center pb-1'>
 					<h6><span>or</span></h6>
 				</Col>
-  			<Button className='my-2' block>
+				<Button className='my-2' block>
 					<FontAwesomeIcon 
 						icon={['fab', 'google']}/>
 						&nbsp;
 					Sign in with Google
 				</Button>
-  			<br/>
-  			<Button block>
+				<br/>
+				<Button block>
 					<FontAwesomeIcon
 						icon={['fab', 'microsoft']} />
 						&nbsp;
 					Sign in with Microsoft
 				</Button>
-  		</Row>
+			</Row>
 		</Form>
 	)
 }

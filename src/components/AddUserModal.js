@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -16,8 +15,6 @@ const AddUserModal = ({
 		email: ''
 	})
 
-
-
 	const handleInputChange = e => {
 		setUserInfo({ ...userInfo, [e.target.name]: e.target.value })
 	}
@@ -31,7 +28,6 @@ const AddUserModal = ({
 			email: ''
 		})
 		handleClose();
-
 	}
 
 	const { email } = userInfo;

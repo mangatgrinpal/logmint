@@ -17,17 +17,14 @@ const Home = ({ showSignUp, setShowSignUp, showSignIn, setShowSignIn }) => {
 	}
 	return (
 		<Row>
-
 			<Container fluid={true}>
 				<Row className='hero-image vh-100' />
 			</Container>
-
 			<CSSTransition
 				in={showSignUp}
 				timeout={600}
 				unmountOnExit
 				classNames='complete-fade'>
-
 				<Container
 					fluid={true}
 					className='position-absolute main-content'>
@@ -50,12 +47,12 @@ const Home = ({ showSignUp, setShowSignUp, showSignIn, setShowSignIn }) => {
 					</Row>
 				</Container>
 			</CSSTransition>
+
 			<CSSTransition
 				in={showSignIn}
 				timeout={600}
 				unmountOnExit
 				classNames='complete-fade'>
-
 				<Container
 					fluid={true}
 					className='position-absolute main-content'>
@@ -92,7 +89,6 @@ const Home = ({ showSignUp, setShowSignUp, showSignIn, setShowSignIn }) => {
 				</Container>
 			</CSSTransition>
 		</Row>
-
 	)
 }
 

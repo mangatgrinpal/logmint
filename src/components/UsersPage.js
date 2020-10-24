@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
-
 import AddUserModal from './AddUserModal';
-
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const UsersPage = () => {
 
 	const [ showModal , setShowModal] = useState(false);
 	const [ users, setUsers ] = useState([]);
-	
 	const handleShow = () => setShowModal(true);
 	const handleClose = () => setShowModal(false);	
 
@@ -21,7 +16,6 @@ const UsersPage = () => {
 		<>
 			<div>
 				<Row className='pt-3'>
-
 					<Col md={12}>
 						<h2>Users & Groups</h2>
 					</Col>
@@ -37,7 +31,7 @@ const UsersPage = () => {
 					</Col>
 				</Row>
 			</div>
-			
+
 			<Row className='bg-light h-100 pt-5'>
 				{
 					users.length === 0 ? (
@@ -56,25 +50,23 @@ const UsersPage = () => {
 						</Col>
 					) : (
 						<Col>
-						
-						{users.map((user, index)=> {
-							return (
-								<Row key={index} className='border-bottom'>
-									<Col>
-										{user.email}
-										<Button>
-											Edit
-										</Button>
-									</Col>
-									
-								</Row>
-							)
-						})}
+							{users.map((user, index)=> {
+								return (
+									<Row key={index} className='border-bottom'>
+										<Col>
+											{user.email}
+											<Button>
+												Edit
+											</Button>
+										</Col>										
+									</Row>
+								)
+							})}
 						</Col>
 					)
 				}
-				
 			</Row>
+
 			<AddUserModal
 				users={users}
 				setusers={setUsers} 

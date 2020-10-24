@@ -1,27 +1,16 @@
 import React, { useState } from 'react';
-
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import AddLogsModal from './AddLogsModal';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-
 
 const LogsPage = () => {
 
 	const [ showModal, setShowModal ] = useState(false);
-
 	const [ logs, setLogs ] = useState([])
-	
-	
 	const handleShow = () => setShowModal(true)
 	const handleClose = () => setShowModal(false)
-
-	
-
-	
 
 	return (
 		<>
@@ -76,7 +65,7 @@ const LogsPage = () => {
 						</Col>
 					)
 				}
-				
+
 			</Row>
 			<AddLogsModal
 				logs={logs} 

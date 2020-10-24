@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
@@ -29,7 +28,6 @@ const AddSupportModal = ({
 			name: ''
 		})
 		handleClose()
-
 	}
 
 	const { name } = supportInfo;

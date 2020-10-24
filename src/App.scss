@@ -35,17 +35,16 @@ button {
 
 .dividing-line {
 	h6 {
-   width: 100%; 
-   text-align: center; 
-   border-bottom: 1px solid #000; 
-   line-height: 0.1em;
-   margin: 10px 0 20px; 
-	} 
-
+		width: 100%; 
+		text-align: center; 
+		border-bottom: 1px solid #000; 
+		line-height: 0.1em;
+		margin: 10px 0 20px; 
+	}
 	h6 span { 
-			color: grey;
-	    background:#fff; 
-	    padding:0 10px; 
+		color: grey;
+		background:#fff; 
+		padding:0 10px; 
 	}
 }
 
@@ -84,31 +83,18 @@ button {
 		a.active {
 			color:#3eb489;
 
-			.row {
+			.row { 
 				border-left: 0.5rem solid #3eb489;
-
-			}
-			
-			.row:hover {
-				background-color: transparent;
 				
+				&:hover {
+					background-color: transparent;
+				}
 			}
 		}
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/*fade for object entering/leaving completely*/
+/*fade transition for object entering/leaving completely*/
 
 .complete-fade-enter {
 	opacity: 0;

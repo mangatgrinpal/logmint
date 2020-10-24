@@ -1,7 +1,6 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
 
 const SignUpForm = () => {
 
@@ -26,20 +25,16 @@ const SignUpForm = () => {
 		const form = e.currentTarget;
 		e.preventDefault();
 		if (form.checkValidity() === false) {
-			
 			e.stopPropagation();	
 		}
-
 		setValidated(true)
 
 		if (form.checkValidity()=== true) {
 			console.log(user)
 		}
-
 	}
 
 	return (
-	
 		<Form noValidate validated={validated} onSubmit={handleSubmit}>
 			<Form.Group>
 				<Form.Label>Organization</Form.Label>
@@ -50,8 +45,8 @@ const SignUpForm = () => {
 					value={organization}
 					placeholder='organization'
 					onChange={handleInputChange}/>
-
 			</Form.Group>
+
 			<Form.Group>
 				<Form.Label>First Name</Form.Label>
 				<Form.Control
@@ -61,8 +56,8 @@ const SignUpForm = () => {
 					value={firstName}
 					placeholder='First Name'
 					onChange={handleInputChange}/>
-
 			</Form.Group>
+
 			<Form.Group>
 				<Form.Label>Last Name</Form.Label>
 				<Form.Control
@@ -72,8 +67,8 @@ const SignUpForm = () => {
 					value={lastName}
 					placeholder='Last Name'
 					onChange={handleInputChange}/>
-
 			</Form.Group>
+
 			<Form.Group>
 				<Form.Label>Email</Form.Label>
 				<Form.Control
@@ -83,8 +78,8 @@ const SignUpForm = () => {
 					value={email}
 					placeholder='email'
 					onChange={handleInputChange}/>
-
 			</Form.Group>
+
 			<Form.Group>
 				<Form.Label>Password</Form.Label>
 				<Form.Control
@@ -95,6 +90,7 @@ const SignUpForm = () => {
 					placeholder='password'
 					onChange={handleInputChange}/>
 			</Form.Group>
+
 			<Form.Group>
 				<Form.Label>Password Confirmation</Form.Label>
 				<Form.Control
@@ -105,6 +101,7 @@ const SignUpForm = () => {
 					placeholder='Password confirmation'
 					onChange={handleInputChange}/>
 			</Form.Group>
+			
 			<Button type='submit' block>
 				Register
 			</Button>

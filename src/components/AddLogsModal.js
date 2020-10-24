@@ -29,7 +29,6 @@ const AddLogsModal = ({
 			logName: ''
 		})
 		handleClose()
-
 	}
 
 	const { logName } = logInfo;
